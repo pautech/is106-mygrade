@@ -46,15 +46,28 @@
           "sonner": "^2.0.3",
           "tailwind-merge": "*",
           "tailwindcss": "*",
-          "vaul": "^1.1.2"
+          "vaul": "^1.1.2",
+          "@supabase/supabase-js": "^2.34.0"
       },
       "devDependencies": {
           "@types/node": "^20.10.0",
           "@vitejs/plugin-react-swc": "^3.10.2",
-          "vite": "6.3.5"
+          "vite": "6.3.5",
+          "vitest": "^0.34.1",
+          "@testing-library/react": "^14.0.0",
+          "@testing-library/jest-dom": "^6.0.0",
+          "jsdom": "^22.1.0"
+      },
+      "vitest": {
+          "test": {
+              "environment": "jsdom",
+              "globals": true
+          }
       },
       "scripts": {
           "dev": "vite",
+          "test": "vitest",
+          "test:ci": "vitest --run",
           "build": "vite build"
       }
   }
