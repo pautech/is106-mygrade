@@ -62,14 +62,9 @@ export default defineConfig({
     target: 'es2019',
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-      mangle: true,
-    },
+    // Use esbuild minifier to avoid needing terser as an extra dependency on build servers
+    minify: 'esbuild',
+    // esbuild will drop console/debugger when 'drop' options used in define/target; keep terserOptions removed
   },
   server: {
     port: 3000,
