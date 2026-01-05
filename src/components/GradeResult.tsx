@@ -54,10 +54,7 @@ export function GradeResult({ student }: GradeResultProps) {
             <div className="text-red-700 text-sm">{course}</div>
           </div>
 
-          <div className="space-y-2">
-            <div className="text-red-700">Final Grade</div>
-            <div className="text-red-900 text-5xl font-bold">{displayGrade}</div>
-          </div>
+          {/* Do not display the numeric grade for non-passed statuses */}
 
           <div className="pt-2 space-y-2 w-full">
             <p className="text-red-800 font-bold">
