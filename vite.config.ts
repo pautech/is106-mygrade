@@ -2,21 +2,20 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
-// Add this line to fix TS errors about 'test' property (optional but good practice)
 /// <reference types="vitest" />
 
 export default defineConfig({
+  base: './', // <--- THIS IS THE MISSING LINE TO FIX THE BLANK SCREEN
   plugins: [react()],
-  // 1. ADD THIS NEW "test" SECTION
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
   },
-  // ------------------------------
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
+      // ... (keep all your aliases here, they are fine) ...
       'vaul@1.1.2': 'vaul',
       'sonner@2.0.3': 'sonner',
       'recharts@2.15.2': 'recharts',
@@ -62,9 +61,7 @@ export default defineConfig({
     target: 'es2019',
     outDir: 'dist',
     sourcemap: false,
-    // Use esbuild minifier to avoid needing terser as an extra dependency on build servers
-    minify: 'esbuild',
-    // esbuild will drop console/debugger when 'drop' options used in define/target; keep terserOptions removed
+    minify: 'esbuild', // Good job! This fixes the 'terser' error.
   },
   server: {
     port: 3000,
