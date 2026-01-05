@@ -73,7 +73,7 @@ export function GradeResult({ student }: GradeResultProps) {
                   href="https://m.me/j/AbaBsE4F_DRp-Z5O/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors shadow-sm"
+                  className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg transition-colors shadow-sm"
                 >
                   Join Group Chat
                 </a>
