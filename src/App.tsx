@@ -9,7 +9,8 @@ export interface Student {
   course: string;
   semester: string;
   status: 'Passed' | 'Intervention';
-  grade: string;
+  // `displayGrade` should be provided by the server (sanitized). Frontend must not decide.
+  displayGrade: string;
   instructor: string;
 }
 
@@ -49,12 +50,12 @@ export default function App() {
         // 2. Map Database Columns to App Structure
         // Database: ID, LASTNAME, STATUS, Final Grade
         // App: id, name, status, grade
+        // Expect the server to return a sanitized `display_grade` field.
         const studentRecord: Student = {
           id: data.ID,
           name: data.LASTNAME,
           status: data.STATUS,
-          grade: data['Final Grade'], // Use brackets for column names with spaces
-          // Default values since these aren't in the DB
+          displayGrade: data.display_grade ?? data['Final Grade'] ?? 'INC',
           course: 'Information Security and Management',
           semester: 'Fall 2025',
           instructor: 'Paulo A. Duga'

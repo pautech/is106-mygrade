@@ -7,7 +7,7 @@ interface GradeResultProps {
 }
 
 export function GradeResult({ student }: GradeResultProps) {
-  const { status, grade, name, course, instructor } = student;
+  const { status, displayGrade, name, course, instructor } = student;
 
   // Normalize status check to be case-insensitive just in case
   const isPassed = status === 'Passed';
@@ -28,7 +28,7 @@ export function GradeResult({ student }: GradeResultProps) {
 
           <div className="space-y-2">
             <div className="text-green-700">Final Grade</div>
-            <div className="text-green-900 text-5xl font-bold">{grade}</div>
+            <div className="text-green-900 text-5xl font-bold">{displayGrade}</div>
           </div>
 
           <div className="pt-2">
@@ -56,10 +56,7 @@ export function GradeResult({ student }: GradeResultProps) {
 
           <div className="space-y-2">
             <div className="text-red-700">Final Grade</div>
-            {/* Display INC or the actual numeric grade if available */}
-            <div className="text-red-900 text-5xl font-bold">
-              {grade === '5' ? '5.0' : grade}
-            </div>
+            <div className="text-red-900 text-5xl font-bold">{displayGrade}</div>
           </div>
 
           <div className="pt-2 space-y-2 w-full">

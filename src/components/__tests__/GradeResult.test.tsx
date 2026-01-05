@@ -9,7 +9,7 @@ describe('GradeResult', () => {
   it('renders Passed layout', () => {
     const student = {
       status: 'Passed',
-      grade: '1.25',
+      displayGrade: '1.25',
       name: 'Alice',
       course: 'Math 101',
       instructor: 'Prof. X'
@@ -25,7 +25,7 @@ describe('GradeResult', () => {
   it('renders Intervention layout', () => {
     const student = {
       status: 'Intervention',
-      grade: '5',
+      displayGrade: 'INC',
       name: 'Bob',
       course: 'Science',
       instructor: 'Dr. Y'
@@ -35,14 +35,14 @@ describe('GradeResult', () => {
 
     expect(screen.getByText('Needs Intervention')).toBeInTheDocument()
     expect(screen.getByText('Bob')).toBeInTheDocument()
-    expect(screen.getByText('5.0')).toBeInTheDocument()
+    expect(screen.getByText('INC')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Join Group Chat/i })).toBeInTheDocument()
   })
 
   it('renders fallback for unknown status', () => {
     const student = {
       status: 'WeirdStatus',
-      grade: 'N/A',
+      displayGrade: 'N/A',
       name: 'Charlie',
       course: 'Art',
       instructor: 'Ms. Z'

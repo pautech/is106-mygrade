@@ -59,8 +59,17 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'esnext',
+    target: 'es2019',
     outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+      mangle: true,
+    },
   },
   server: {
     port: 3000,
