@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GradeResult } from './components/GradeResult';
-import { supabase } from './supabaseClient';
+import { supabase, SUPABASE_CONFIGURED } from './supabaseClient';
 
 // Define the shape of our student object locally
 export interface Student {
@@ -30,6 +30,11 @@ export default function App() {
     }
 
     try {
+      if (!SUPABASE_CONFIGURED) {
+        setError('Application not configured. Missing Supabase environment variables.');
+        return;
+      }
+
       setLoading(true);
 
       // 1. Fetch from Supabase
