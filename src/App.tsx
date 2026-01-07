@@ -61,13 +61,8 @@ export default function App() {
           name: data.LASTNAME,
           status: data.STATUS,
           displayGrade: data.display_grade ?? data['Final Grade'] ?? 'INC',
-<<<<<<< HEAD
           course: 'Quantitive Methods',
           semester: '2025-2026',
-=======
-          course: 'Information Security and Management',
-          semester: 'Fall 2025',
->>>>>>> origin/main
           instructor: 'Paulo A. Duga'
         };
 
