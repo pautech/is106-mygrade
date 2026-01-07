@@ -67,7 +67,7 @@ export function GradeResult({ student }: GradeResultProps) {
               <div className="text-red-800">Instructor: {instructor}</div>
               <div>
                 <a 
-                  href="https://m.me/j/AbaBsE4F_DRp-Z5O/" 
+                  href="https://m.me/j/AbYDXRl2Dp4px5-y/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg transition-colors shadow-sm"
