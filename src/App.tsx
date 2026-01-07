@@ -61,8 +61,8 @@ export default function App() {
           name: data.LASTNAME,
           status: data.STATUS,
           displayGrade: data.display_grade ?? data['Final Grade'] ?? 'INC',
-          course: 'Information Security and Management',
-          semester: 'Fall 2025',
+          course: 'Quantitive Methods',
+          semester: '2025-2026',
           instructor: 'Paulo A. Duga'
         };
 
@@ -89,8 +89,8 @@ export default function App() {
               name: d.LASTNAME,
               status: d.STATUS,
               grade: d['Final Grade'],
-              course: 'Information Security and Management',
-              semester: 'Fall 2025',
+              course: 'Quantitaitve Methods',
+              semester: '2025-2026',
               instructor: 'Paulo A. Duga'
             };
             setResult(studentRecord);
@@ -115,8 +115,8 @@ export default function App() {
               name: d.LASTNAME || d.lastName,
               status: d.STATUS || d.status,
               grade: d['Final Grade'] || d.final_grade,
-              course: 'Information Security and Management',
-              semester: 'Fall 2025',
+              course: 'Quantitaitve Methods',
+              semester: '2025-2026',
               instructor: 'Paulo A. Duga'
             };
             setResult(studentRecord);
@@ -159,7 +159,7 @@ export default function App() {
               <input
                 id="studentId"
                 type="text"
-                placeholder="Enter ID Number (e.g., 221-00295)"
+                placeholder="Enter ID Number (e.g., 221-00795)"
                 value={studentId}
                 onChange={(e) => setStudentId(e.target.value)}
                 onKeyPress={handleKeyPress}
