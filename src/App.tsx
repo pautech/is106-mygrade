@@ -61,13 +61,8 @@ export default function App() {
           name: data.LASTNAME,
           status: data.STATUS,
           displayGrade: data.display_grade ?? data['Final Grade'] ?? 'INC',
-<<<<<<< HEAD
-          course: 'Quantitive Methods',
+          course: 'Quantitive Methods',//course title
           semester: '2025-2026',
-=======
-          course: 'Information Security and Management',
-          semester: 'Fall 2025',
->>>>>>> origin/main
           instructor: 'Paulo A. Duga'
         };
 
@@ -94,13 +89,8 @@ export default function App() {
               name: d.LASTNAME,
               status: d.STATUS,
               grade: d['Final Grade'],
-<<<<<<< HEAD
               course: 'Quantitaitve Methods',
               semester: '2025-2026',
-=======
-              course: 'Information Security and Management',
-              semester: 'Fall 2025',
->>>>>>> origin/main
               instructor: 'Paulo A. Duga'
             };
             setResult(studentRecord);
@@ -169,11 +159,7 @@ export default function App() {
               <input
                 id="studentId"
                 type="text"
-<<<<<<< HEAD
                 placeholder="Enter ID Number (e.g., 221-00795)"
-=======
-                placeholder="Enter ID Number (e.g., 221-00295)"
->>>>>>> origin/main
                 value={studentId}
                 onChange={(e) => setStudentId(e.target.value)}
                 onKeyPress={handleKeyPress}
